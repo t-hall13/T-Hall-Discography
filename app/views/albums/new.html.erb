@@ -1,0 +1,18 @@
+<% @page_title = "New Album" %>
+
+<%= link_to("<< Back to List", {:action => 'index'}, :class => 'back-link') %>
+
+	<div class="albums new">
+		<h2>ADD ALBUM</h2>
+
+		<%= form_for(:album, :url => {:action => 'create'}) do |f| %>
+
+		<%= render(:partial => "form", :locals => {:f => f}) %>
+
+		<div class="form-buttons">
+			<%= submit_tag("Create Album") %>
+		</div>
+
+		<% end %>
+
+	</div>

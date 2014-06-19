@@ -1,0 +1,36 @@
+<% @album_title = @album.name %>
+
+<%= link_to("<<Back To Main", {:controller => 'public', :action => 'index'}, :class => 'back_link') %>
+<h2><%= @album.name %> - Album Detail</h2>
+	<div class="box">
+		
+		<div class="avatar">
+			<%= image_tag @album.avatar.url(:medium)%>
+		</div>
+		<table class="albums-song-list-public">
+			<% @album.songs.sorted.each do |song| %>
+		<tr class="<%= cycle('odd', 'even') %>">
+			<td><%= song.position %></td>
+			<td><%= link_to(song.name, {:controller => 'public',:action => 'songs_public', :id => song.id, :album_id => @album.id}, :class => 'action songs_public') %></td>
+		</tr>
+		<% end %>
+		</table>
+
+		<table class="album-detail-table">
+			<tr>
+				<th>Album</th>
+				<td><%= @album.name %></td>
+			</tr>
+			<tr>
+				<th>Year</th>
+				<td><%= @album.year %></td>
+			</tr>
+			<tr>
+				<th>Summary</th>
+				<td class="album-summary"><%= simple_format(word_wrap(@album.summary, :line_width => 35))%></td>
+			</tr>
+		</table>
+
+
+</div>
+	

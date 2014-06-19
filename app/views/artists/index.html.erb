@@ -1,0 +1,36 @@
+<% @page_title = "Artists" %>
+
+<%= link_to("<<Back To Menu", {:controller => 'access', :action => 'index'}, :class => 'back_link') %>
+
+
+<div class= "artists index">
+	<h2>ARTISTS</h2>
+
+	
+
+	<%= link_to(image_tag('plus_sign.png', :size => '11 x 11', :alt => '+') +" Add New Artist", {:action => 'new'}, :class => 'action new') %>
+
+	<div><%= pluralize(@artists.size, 'artist') %> found</div>
+	<table class="listing" summary = "Artist list">
+		<tr class= "header">
+			<!--<th>&nbsp;</th>-->
+			<th>ID</th>
+			<th>Artist</th>
+			<th>Albums</th>
+			<th>Actions</th>
+		</tr>
+		<% @artists.each do |artist| %>
+		<tr class="<%= cycle('odd', 'even') %>">
+			<td><%= artist.id %></td>
+			<td><%= artist.name %></td>
+			<td class="center"><%= artist.albums.size %></td>
+			<td class="actions">
+				<%= link_to("Albums", {:controller => 'albums', :artist_id => artist.id}, :class => 'action show') %>
+				<%= link_to("Show", {:action => 'show', :id => artist.id}, :class => 'action show') %>
+				<%= link_to("Edit", {:action => 'edit', :id => artist.id}, :class => 'action edit') %>
+				<%= link_to("Delete", {:action => 'delete', :id => artist.id}, :class => 'action delete') %>
+			</td>
+		</tr>
+		<% end %>
+	</table>
+</div>

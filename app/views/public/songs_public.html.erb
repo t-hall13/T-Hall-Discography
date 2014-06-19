@@ -1,0 +1,27 @@
+<% @page_title = "Song Detail" %>
+
+
+	<%= link_to ("<< Back To Album"), :back %>
+	<h2><%= @song.name %> - Song Detail</h2>
+
+	<div class="songs public">
+
+		<table>
+			<tr>
+				<th>Album</th>
+				<td><%= @song.album.name %></td>
+			</tr>
+			<tr>
+				<th>Title</th>
+				<td><%= @song.name %></td>
+			</tr>
+			<tr>
+				<th>Written By:</th>
+				<td><%= @song.writer %></td>
+			</tr>
+			<tr>
+				<th>Summary</th>
+				<td><%= simple_format(word_wrap(@song.summary, :line_width => 50))%></td>
+			</tr>
+		</table>
+	</div>

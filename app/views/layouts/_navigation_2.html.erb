@@ -1,0 +1,17 @@
+<% artists ||= [] %>
+
+<ul>
+	<% artists.each do |artist| %>
+	<li><%= artist.name %></li>
+</ul>
+	
+		 <ul>
+			<% artist.albums.newest_first.each do |album| %>
+			<li><%= link_to(album.name,  :action => 'show', :id => album.id, :permalink => album.permalink) %></li>
+			<% end %> 
+		</ul>
+	 
+</ul>
+
+
+<% end %>

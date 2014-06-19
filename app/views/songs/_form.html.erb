@@ -1,0 +1,28 @@
+<%= error_messages_for(@song) %>
+
+<table summary="Song form fields">
+	<tr>
+		<th><%= f.label(:album_id, "Album") %></th>
+		<td><%= f.select(:album_id, @albums.map {|a| [a.name, a.id]}) %></td>
+	</tr>
+	<tr>
+		<th><%= f.label(:position, "Track Number") %></th>
+		<td><%= f.select(:position, 1..@song_count) %></td>
+	</tr>	
+	<tr>
+		<th><%= f.label(:name, "Title") %></th>
+		<td><%= f.text_field(:name) %></td>
+	</tr>
+	<tr>
+		<th><%= f.label(:permalink, "Permalink") %></th>
+		<td><%= f.text_field(:permalink) %></td>
+	</tr>	
+	<tr>
+		<th><%= f.label(:writer, "Written By:") %></th>
+		<td><%= f.text_field(:writer) %></td>
+	</tr>
+	<tr>
+		<th><%= f.label(:summary) %></th>
+		<td><%= f.text_area(:summary, :size => '40x10') %></td>
+	</tr>
+</table>

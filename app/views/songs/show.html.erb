@@ -1,0 +1,26 @@
+<% @page_title = "Song Detail" %>
+
+<%= link_to("<< Back to List", {:action => 'index', :album_id => @album.id}, :class => 'back-link') %>
+
+	<div class="songs show">
+		<h2>SONG DETAIL</h2>
+
+		<table>
+			<tr>
+				<th>Album</th>
+				<td><%= @song.album.name %></td>
+			</tr>
+			<tr>
+				<th>Title</th>
+				<td><%= @song.name %></td>
+			</tr>
+			<tr>
+				<th>Written By:</th>
+				<td><%= @song.writer %></td>
+			</tr>
+			<tr>
+				<th>Summary</th>
+				<td><%= @song.summary %></td>
+			</tr>
+		</table>
+	</div>

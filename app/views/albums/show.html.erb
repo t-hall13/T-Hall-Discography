@@ -1,0 +1,41 @@
+<% @page_title = "Album Detail" %>
+
+<%= link_to("<< Back to List", {:action => 'index'}, :class => 'back-link') %>
+
+	<div class="albums show">
+		<h2>ALBUM DETAIL</h2>
+
+		<table>
+			<tr>
+				<th>ID</th>
+				<td><%= @album.id %></td>
+			</tr>
+			<tr>
+				<th>Title</th>
+				<td><%= @album.name %></td>
+			</tr>
+			<tr>
+				<th>Artist</th>
+				<td><%= @album.album_artist %></td>
+			</tr>
+			<tr>
+				<th>Year</th>
+				<td><%= @album.year %></td>
+			</tr>
+			<tr>
+				<th>Summary</th>
+				<td><%= simple_format(word_wrap(@album.summary, :line_width => 75)) %></td>
+			</tr>
+		</table>
+	</div>
+	<!--<div class="albums-song-list">-->
+		<table class="albums-song-list">
+			<% @album.songs.sorted.each do |song| %>
+		<tr class="<%= cycle('odd', 'even') %>">
+			<td><%= song.position %></td>
+			<td><%= song.name %></td>
+		</tr>
+		<% end %>
+		<div class="clear"></div>
+		</table>
+	<!--</div>-->

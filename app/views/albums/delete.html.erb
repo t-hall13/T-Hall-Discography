@@ -1,0 +1,25 @@
+<% @page_title = "Delete Album" %>
+
+<%= link_to("<< Back to List", {:action => 'index'}, :class => 'back-link') %>
+
+	<div class="albums delete">
+		<h2>DELETE ALBUM</h2>
+
+		<%= form_for(:album, :url => {:action => 'destroy', :id => @album.id}) do |f| %>
+
+		<h1>OH SHIT!!!</h1>
+		<p>Are you sure you know what you're deleting?!?</p>
+		<p>The epic classic</p>
+
+		<p class="reference-name"><%= @album.name %></p>
+		<p>by</p>
+		<p class="reference-name"><%= @album.album_artist %></p>
+
+
+		<div class="form-buttons">
+			<%= submit_tag("Delete Album") %>
+		</div>
+
+		<% end %>
+
+	</div>

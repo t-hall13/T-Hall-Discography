@@ -1,0 +1,17 @@
+<%= error_messages_for(@artist) %>
+
+<table summary="Artist form fields">
+	<tr>
+		<th><%= f.label(:artist_id, "Artist ID") %></th>
+		<td><%= f.text_field(:id) %></td>
+	</tr>
+	<tr>
+		<th><%= f.label(:name) %></th>
+		<td><%= f.text_field(:name) %></td>
+	</tr>
+
+	<!--<tr>
+		<th><%= f.label(:created_at) %></th>
+		<td><%= f.datetime_select(:created_at, :order => [:month, :day, :year]) %></td>
+	</tr>-->	
+</table>

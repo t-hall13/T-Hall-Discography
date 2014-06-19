@@ -1,0 +1,44 @@
+<%= error_messages_for(@album) %>
+
+<table summary="Album form fields">
+	<tr>
+		<th><%= f.label(:album_id, "Album ID") %></th>
+		<td><%= f.text_field(:id) %></td>
+	</tr>
+	<tr>
+		<th><%= f.label(:artist_id, "Artist ID") %></th>
+		<td><%= f.text_field(:artist_id) %></td>
+	</tr>
+	<tr>
+		<th><%= f.label(:permalink, "Permalink") %></th>
+		<td><%= f.text_field(:permalink) %></td>
+	</tr>
+	<tr>
+		<th><%= f.label(:position) %></th>
+		<td><%= f.text_field(:position) %></td>
+	</tr>
+	<tr>
+		<th><%= f.label(:name) %></th>
+		<td><%= f.text_field(:name) %></td>
+	</tr>
+	<tr>
+		<th><%= f.label(:album_artist) %></th>
+		<td><%= f.text_field(:album_artist) %></td>
+	</tr>
+	<tr>
+		<th><%= f.label(:year) %></th>
+		<td><%= f.text_field(:year) %></td>
+	</tr>
+	<tr>
+		<th><%= f.label(:summary) %></th>
+		<td><%= f.text_area(:summary) %></td>
+	</tr>
+	<tr>
+		<th><%= f.label(:avatar) %></th>
+		<td><%= f.file_field(:avatar) %></td>
+	</tr>
+	<!--<tr>
+		<th><%= f.label(:created_at) %></th>
+		<td><%= f.datetime_select(:created_at, :order => [:month, :day, :year]) %></td>
+	</tr>-->	
+</table>

@@ -1,0 +1,18 @@
+<% @page_title = "Add Song" %>
+
+<%= link_to("<< Back to List", {:action => 'index', :album_id => @album.id}, :class => 'back-link') %>
+
+	<div class="songs new">
+		<h2>ADD SONG</h2>
+
+		<%= form_for(:song, :url => {:action => 'create', :album_id => @album.id}) do |f| %>
+
+		<%= render(:partial => "form", :locals => {:f => f}) %>
+
+		<div class="form-buttons">
+			<%= submit_tag("Create Song") %>
+		</div>
+
+		<% end %>
+
+	</div>

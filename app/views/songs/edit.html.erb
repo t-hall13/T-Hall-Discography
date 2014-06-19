@@ -1,0 +1,18 @@
+<% @page_title = "Edit Song" %>
+
+<%= link_to("<< Back to List", {:action => 'index', :album_id => @album.id}, :class => 'back-link') %>
+
+	<div class="songs edit">
+		<h2>UPDATE SONG</h2>
+
+		<%= form_for(:song, :url => {:action => 'update', :id => @song.id, :album_id => @album.id}) do |f| %>
+
+			<%= render(:partial => "form", :locals => {:f => f}) %>
+
+		<div class="form-buttons">
+			<%= submit_tag("Update Song") %>
+		</div>
+
+		<% end %>
+
+	</div>

@@ -1,0 +1,21 @@
+<h1>Demo#index</h1>
+<h1>T Hall Discography Demo Index</h1>
+	<p>Hello from Index!</p>
+
+	<a href= "/demo/hello">Hello page 1</a><br />
+	<%= link_to('Hello page 2',{:action => 'hello'}) %><br />
+	<%= link_to('Hello with parameters',{:action => 'hello',:page => 5, :id => 20}) %>
+
+	<div class="describe app">
+		<h2>This is going to be a basic beginner app that will chronicle all songs I have written and/or recorded.</h2>
+	</div>
+
+	<br />
+
+	<br />
+
+	<% name = "JonBob" %>
+
+	<%= link_to('Fart', '#', :onclick => "jsRoar('#{j(name)}'); return true;") %>
+
+	<%= javascript_tag("jsRoar('#{j(name)}');") %>

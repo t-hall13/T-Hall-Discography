@@ -1,0 +1,26 @@
+<h1>Demo#hello</h1>
+<h1>T Hall Discography Demo Index</h1>
+	<p>Hello!</p>
+	<div class="describe app">
+		<p>This is going to be a basic beginner app that will chronicle all songs I have written.</p>
+
+		<%= 1 + 1  %>
+			<br />
+
+		<% target = "fukstik" %>
+
+		<%= "Hello #{target}" %><br />
+
+		<% @array.each do |n| %>
+			<%= n %><br />
+		<% end %>
+		<br />
+		<a href= "/demo/index">Index page 1</a><br />
+		<%= link_to('Index page 2',{:action => 'index'}) %><br />
+
+		ID: <%= params[:id] %><br />
+		ID: <%= @id %><br />
+		Next Page: <%= @page.to_i + 1 %><br />
+		<hr />
+		<%= params.inspect %>
+	</div>
